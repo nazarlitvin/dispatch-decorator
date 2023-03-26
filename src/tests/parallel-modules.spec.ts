@@ -1,4 +1,4 @@
-import { Component, Injectable, NgModule, ɵivyEnabled } from '@angular/core';
+import { Component, Injectable, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Action, NgxsModule, State, StateContext, Store } from '@ngxs/store';
@@ -8,10 +8,6 @@ import { Dispatch } from '..';
 import { freshPlatform } from './fresh-platform';
 
 describe('Parallel modules', () => {
-  if (!ɵivyEnabled) {
-    throw new Error('This test requires Ivy to be enabled.');
-  }
-
   class Increment {
     static readonly type = '[Counter] Increment';
   }

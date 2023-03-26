@@ -1,4 +1,4 @@
-import { NgZone, ɵivyEnabled } from '@angular/core';
+import { NgZone } from '@angular/core';
 import { Store } from '@ngxs/store';
 
 import { DispatchOptions } from '../internals/internals';
@@ -45,8 +45,6 @@ export function Dispatch(options = defaultOptions): PropertyDecorator {
       });
     }
 
-    if (ɵivyEnabled) {
-      ensureLocalInjectorCaptured(target);
-    }
+    ensureLocalInjectorCaptured(target);
   };
 }
